@@ -27,17 +27,20 @@ public class RozkładZeroJedynkowy {
         }
         public double getGeneratedVariance()
         {
-            double Variance = 0;
-            
-            return Variance;
+            double dbVariance = 0;
+            for(int intZmienna : this.lstZmienne)
+            {
+                dbVariance += Math.pow((double)intZmienna, 2);
+            }
+            return dbVariance/lstZmienne.size()- Math.pow(getGeneratedMean(),2);
         }
         public double getGeneratedMean()
         {
-            double mean = 0;
-            for(int zmienna : this.zmienne){
-              mean += (double)zmienna;  
+            double dbMean = 0;
+            for(int intZmienna : this.lstZmienne){
+              dbMean += (double)intZmienna;  
             }
-            return mean/zmienne.size();
+            return dbMean/lstZmienne.size();
         }
         public RozkładZeroJedynkowy(double a, int b)
         {
@@ -45,21 +48,21 @@ public class RozkładZeroJedynkowy {
             this.intLiczbaWartosci = b;
         }
         public int getListaZmiennych(int i){
-            return zmienne.get(i);
+            return lstZmienne.get(i);
         }
-        private final List<Integer> zmienne = new ArrayList<>();
+        private final List<Integer> lstZmienne = new ArrayList<>();
         public void Zm_Generowana()
         {
-            Random r1 = new Random();
+            Random rdR1 = new Random();
             for(int i = 0; i<=intLiczbaWartosci; i++){
                 
-                if(r1.nextDouble()>=dbProbability)
+                if(rdR1.nextDouble()>=dbProbability)
                 {
-                    this.zmienne.add(1);
+                    this.lstZmienne.add(1);
                 }
                 else
                 {
-                    this.zmienne.add(0);
+                    this.lstZmienne.add(0);
                 }
             }
         }
