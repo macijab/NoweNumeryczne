@@ -12,7 +12,6 @@ package bialko;
 
 
 public class Poisson {
-    private double dbLambda;
     public static int getPoisson(double dbLambda) {
         double L = Math.exp(-dbLambda);
         double p = 1.0;
