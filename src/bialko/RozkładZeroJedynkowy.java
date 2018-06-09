@@ -5,7 +5,6 @@
  */
 package bialko;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.util.Random;
 import java.lang.Math;
 import java.util.List;
@@ -26,13 +25,19 @@ public class RozkładZeroJedynkowy {
         {
             return dbProbability*(1-dbProbability);
         }
-        public double getGenericMean()
+        public double getGeneratedVariance()
         {
-            zmienne.forEach((_item) -> 
-            {
-                zmienne.get(_item) = 
-            });
-                
+            double Variance = 0;
+            
+            return Variance;
+        }
+        public double getGeneratedMean()
+        {
+            double mean = 0;
+            for(int zmienna : this.zmienne){
+              mean += (double)zmienna;  
+            }
+            return mean/zmienne.size();
         }
         public RozkładZeroJedynkowy(double a, int b)
         {
