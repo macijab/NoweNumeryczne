@@ -12,20 +12,41 @@ import java.lang.Math;
  *
  * @author faust
  */
-
-
 public class Poisson {
     
     private double dbLambda;
     List<Integer> lstWygenerowane = new ArrayList<Integer>();
     private final int intLiczbaZmiennych;
     
-    public Poisson(double a, int b){
+    public Poisson(double a, int b)
+    {
         this.dbLambda = a;
         this.intLiczbaZmiennych = b;
     }
-    
-    public int getPoisson() {
+    public double getTeoreticalMean()
+    {
+        return dbLambda;//średnia w Poissonie to to samo co wariancja;
+    }
+    public double getGeneratedMean()
+    {
+        double suma = 0;
+        for(int intZmienna :lstWygenerowane)
+        {
+           suma += (double)intZmienna;
+        }
+        return suma/lstWygenerowane.size();
+    }
+    public double getGeneratedVariance()
+    {
+         double dbVariance = 0;
+        for(int intZmienna : this.lstWygenerowane)
+        {
+            dbVariance += Math.pow((double)intZmienna, 2);
+        }
+        return dbVariance/lstWygenerowane.size()- Math.pow(getGeneratedMean(),2);
+    }
+    public int generowanieZmiennej() 
+    {
         double dbp = 1.0;
         int intk = 0;
         double dbL = Math.exp(-dbLambda);
@@ -35,6 +56,18 @@ public class Poisson {
             dbp *= Math.random();
         } while (dbp > dbL);
 
-    return k - 1;
+    return intk - 1;
+    }
+    public void generowanie_zmiennych()
+    {
+        int a = 0;
+        for(int i = 0; i < this.intLiczbaZmiennych;i++)
+        {
+            lstWygenerowane.add(generowanieZmiennej());
+        }
+    }
+    public int getListaWygenerowanych(int i)
+    {
+        return lstWygenerowane.get(i);
     }
 }
