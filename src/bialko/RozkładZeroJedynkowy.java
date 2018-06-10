@@ -62,7 +62,7 @@ public class RozkładZeroJedynkowy {
                 }
                 else
                 {
-                    this.lstZmienne.add(0);
+                    this.lstZmienne.add(1);
                 }
             }
         }
