@@ -5,6 +5,9 @@
  */
 package bialko;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.lang.Math;
 /**
  *
  * @author faust
@@ -12,15 +15,25 @@ package bialko;
 
 
 public class Poisson {
-    public static int getPoisson(double dbLambda) {
-        double L = Math.exp(-dbLambda);
-        double p = 1.0;
-        int k = 0;
+    
+    private double dbLambda;
+    List<Integer> lstWygenerowane = new ArrayList<Integer>();
+    private final int intLiczbaZmiennych;
+    
+    public Poisson(double a, int b){
+        this.dbLambda = a;
+        this.intLiczbaZmiennych = b;
+    }
+    
+    public int getPoisson() {
+        double dbp = 1.0;
+        int intk = 0;
+        double dbL = Math.exp(-dbLambda);
 
         do {
-            k++;
-            p *= Math.random();
-        } while (p > L);
+            intk++;
+            dbp *= Math.random();
+        } while (dbp > dbL);
 
     return k - 1;
     }
