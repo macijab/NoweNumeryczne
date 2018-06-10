@@ -8,7 +8,6 @@ package bialko;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
-import java.util.Random;
 /**
  *
  * @author faust
@@ -39,7 +38,7 @@ public class Poisson {
     }
     public double getGeneratedVariance()
     {
-        double dbVariance = 0;
+         double dbVariance = 0;
         for(int intZmienna : this.lstWygenerowane)
         {
             dbVariance += Math.pow((double)intZmienna, 2);
@@ -51,13 +50,13 @@ public class Poisson {
         double dbp = 1.0;
         int intk = 0;
         double dbL = Math.exp(-dbLambda);
-        Random r1 = new Random();
+
         do {
             intk++;
-            dbp *= r1.nextDouble();//dbp = dbp*Math.random
+            dbp *= Math.random();
         } while (dbp > dbL);
 
-        return intk - 1;
+    return intk - 1;
     }
     public void generowanie_zmiennych()
     {
