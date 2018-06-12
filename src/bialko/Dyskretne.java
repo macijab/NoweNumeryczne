@@ -62,6 +62,13 @@ public class Dyskretne extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jSpinner1 = new javax.swing.JSpinner();
         dlgRozkładPoissona = new javax.swing.JDialog();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jSpinner2 = new javax.swing.JSpinner();
         dlgRozkładHipergeometryczny = new javax.swing.JDialog();
         dlgPotwierdzenieWyczyść = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
@@ -140,7 +147,7 @@ public class Dyskretne extends javax.swing.JFrame {
             }
         });
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         javax.swing.GroupLayout dlgRozkładZerojedynkowyLayout = new javax.swing.GroupLayout(dlgRozkładZerojedynkowy.getContentPane());
         dlgRozkładZerojedynkowy.getContentPane().setLayout(dlgRozkładZerojedynkowyLayout);
@@ -187,15 +194,80 @@ public class Dyskretne extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        dlgRozkładPoissona.setMinimumSize(new java.awt.Dimension(222, 245));
+        dlgRozkładPoissona.setResizable(false);
+
+        jButton10.setText("Oblicz");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("Zakończ");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Rozkład Poissona");
+
+        jLabel16.setText("Prawdopodobieństwo:");
+
+        jLabel17.setText("Liczba wartości:");
+
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         javax.swing.GroupLayout dlgRozkładPoissonaLayout = new javax.swing.GroupLayout(dlgRozkładPoissona.getContentPane());
         dlgRozkładPoissona.getContentPane().setLayout(dlgRozkładPoissonaLayout);
         dlgRozkładPoissonaLayout.setHorizontalGroup(
             dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField8))
+                    .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
+                        .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSpinner2))))
+                .addContainerGap())
+            .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dlgRozkładPoissonaLayout.setVerticalGroup(
             dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgRozkładPoissonaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addGap(17, 17, 17)
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton10)
+                    .addComponent(jButton11))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dlgRozkładHipergeometrycznyLayout = new javax.swing.GroupLayout(dlgRozkładHipergeometryczny.getContentPane());
@@ -300,6 +372,11 @@ public class Dyskretne extends javax.swing.JFrame {
         jLabel8.setText("Wariancja teoretyczna:");
 
         jTextField2.setEditable(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jTextField3.setEditable(false);
 
@@ -533,13 +610,14 @@ public class Dyskretne extends javax.swing.JFrame {
         
         jTextPane1.setVisible(false);
         jTextPane1.setText("Wyniki losowania:"+ System.lineSeparator() +"======================="+
-        System.lineSeparator()+"Średnia teoretyczna: "+jTextField1.getText()+
-        System.lineSeparator()+"Wariancja teoretyczna: "+jTextField2.getText()+
-        System.lineSeparator()+"Średnia generowana: "+jTextField3.getText()+
-        System.lineSeparator()+"Różnica średnich: "+jTextField5.getText()+
-        System.lineSeparator()+"Wariancja teoretyczna: "+jTextField6.getText()+
-        System.lineSeparator()+"Wynik: "+lista.toString());      
-        if (!jTextField1.getText().isEmpty())
+            System.lineSeparator()+"Średnia teoretyczna: "+jTextField2.getText()+
+            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField3.getText()+
+            System.lineSeparator()+"Średnia generowana: "+jTextField4.getText()+
+            System.lineSeparator()+"Wariancja generowana:"+jTextField5.getText()+    
+            System.lineSeparator()+"Różnica średnich: "+jTextField6.getText()+
+            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField7.getText()+
+            System.lineSeparator()+"Wynik: "+lista.toString());      
+        if (!jTextField2.getText().isEmpty())
         {
             dlgZapis.setVisible(true);
         }
@@ -548,7 +626,7 @@ public class Dyskretne extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Brak wyników do zapisania!");
             return;
         }
-        
+       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
@@ -565,6 +643,9 @@ public class Dyskretne extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        
+        dlgRozkładPoissona.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -583,7 +664,7 @@ public class Dyskretne extends javax.swing.JFrame {
         
         lista.clear();
         
-        if (!jTextField1.getText().isEmpty() && (int)jSpinner1.getValue()>0 && Double.parseDouble(jTextField1.getText()) <= 1)
+        if (!jTextField1.getText().isEmpty() && (int)jSpinner1.getValue()>0 && Double.parseDouble(jTextField1.getText()) >= 0 && Double.parseDouble(jTextField1.getText()) <= 1)
         {
             RozkładZeroJedynkowy rozkład1 = new RozkładZeroJedynkowy(Double.parseDouble(jTextField1.getText()), (int)jSpinner1.getValue());
             blObliczanie=true;
@@ -591,7 +672,7 @@ public class Dyskretne extends javax.swing.JFrame {
                         
             jList1.setModel(lista);
             
-            for (int i=0;(i-1) < (int)jSpinner1.getValue();i++)
+            for (int i=0; (i-1) < ((int)jSpinner1.getValue()-1);i++)
             {
                 lista.addElement(rozkład1.getListaZmiennych(i));
             }
@@ -612,7 +693,7 @@ public class Dyskretne extends javax.swing.JFrame {
         }
         else
         {
-            if (jTextField1.getText().isEmpty() || Double.parseDouble(jTextField1.getText()) > 1)
+            if (jTextField1.getText().isEmpty() || Double.parseDouble(jTextField1.getText()) > 1 || Double.parseDouble(jTextField1.getText()) < 0)
             {
                 JOptionPane.showMessageDialog(rootPane, "Nie podano poprawnego prawdopodobieństwa!");
                 return;
@@ -624,8 +705,6 @@ public class Dyskretne extends javax.swing.JFrame {
             }
             
         }
-        
-        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -684,13 +763,14 @@ public class Dyskretne extends javax.swing.JFrame {
 
         jTextPane1.setVisible(false);
         jTextPane1.setText("Wyniki losowania:"+ System.lineSeparator() +"======================="+
-            System.lineSeparator()+"Średnia teoretyczna: "+jTextField1.getText()+
-            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField2.getText()+
-            System.lineSeparator()+"Średnia generowana: "+jTextField3.getText()+
-            System.lineSeparator()+"Różnica średnich: "+jTextField5.getText()+
-            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField6.getText()+
+            System.lineSeparator()+"Średnia teoretyczna: "+jTextField2.getText()+
+            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField3.getText()+
+            System.lineSeparator()+"Średnia generowana: "+jTextField4.getText()+
+            System.lineSeparator()+"Wariancja generowana:"+jTextField5.getText()+    
+            System.lineSeparator()+"Różnica średnich: "+jTextField6.getText()+
+            System.lineSeparator()+"Wariancja teoretyczna: "+jTextField7.getText()+
             System.lineSeparator()+"Wynik: "+lista.toString());      
-        if (!jTextField1.getText().isEmpty())
+        if (!jTextField2.getText().isEmpty())
         {
             dlgZapis.setVisible(true);
         }
@@ -729,6 +809,73 @@ public class Dyskretne extends javax.swing.JFrame {
         dlgZapis.dispose();
         
     }//GEN-LAST:event_jFileChooser1ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+               
+        lista.clear();
+        
+        if (!jTextField8.getText().isEmpty() && (int)jSpinner2.getValue()>0 && Double.parseDouble(jTextField8.getText()) >= 0)
+        {
+            Poisson rozkład2 = new Poisson(Double.parseDouble(jTextField8.getText()), (int)jSpinner2.getValue());
+            blObliczanie=true;
+            rozkład2.generowanieZmiennej();
+            rozkład2.generowanie_zmiennych();     
+                        
+            jList1.setModel(lista);
+            
+            for (int i=0;(i-1) < ((int)jSpinner2.getValue())-1;i++)
+            {
+                lista.addElement(rozkład2.getListaWygenerowanych(i));
+            }
+            
+            DecimalFormat df = new DecimalFormat();
+            df.setMinimumFractionDigits(4);
+            df.setMaximumFractionDigits(4);
+            
+            jTextField2.setText((String)df.format(rozkład2.getTeoreticalMean()));
+            jTextField3.setText((String)df.format(rozkład2.getTeoreticalMean()));
+            jTextField4.setText((String)df.format(rozkład2.getGeneratedMean()));
+            jTextField5.setText((String)df.format(rozkład2.getGeneratedVariance()));
+            jTextField6.setText((String)df.format(abs(rozkład2.getTeoreticalMean()-rozkład2.getGeneratedMean())));
+            jTextField7.setText((String)df.format(abs(rozkład2.getTeoreticalMean()-rozkład2.getGeneratedVariance())));
+
+            dlgRozkładPoissona.dispose();
+        
+        }
+        else
+        {
+            if (jTextField8.getText().isEmpty() || Double.parseDouble(jTextField8.getText()) < 0)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano poprawnego prawdopodobieństwa!");
+                return;
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano liczby zmiennych!");
+                return;
+            }
+            
+        }
+
+        
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        
+        dlgRozkładPoissona.dispose();
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -773,6 +920,8 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JDialog dlgRozkładZerojedynkowy;
     private javax.swing.JDialog dlgZapis;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -782,11 +931,14 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JFileChooser jFileChooser1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -814,6 +966,7 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -821,6 +974,7 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
