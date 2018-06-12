@@ -213,7 +213,7 @@ public class Dyskretne extends javax.swing.JFrame {
 
         jLabel10.setText("Rozkład Poissona");
 
-        jLabel16.setText("Prawdopodobieństwo:");
+        jLabel16.setText("Lambda:");
 
         jLabel17.setText("Liczba wartości:");
 
@@ -232,18 +232,14 @@ public class Dyskretne extends javax.swing.JFrame {
             .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField8))
-                    .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
-                        .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSpinner2))))
+                    .addComponent(jLabel17)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(49, 49, 49)
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField8)
+                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSpinner2))
                 .addContainerGap())
             .addGroup(dlgRozkładPoissonaLayout.createSequentialGroup()
                 .addGap(65, 65, 65)
