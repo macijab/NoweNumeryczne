@@ -58,11 +58,11 @@ public class RozkładZeroJedynkowy {
                 
                 if(rdR1.nextDouble()>=dbProbability)
                 {
-                    this.lstZmienne.add(1);
+                    this.lstZmienne.add(0);
                 }
                 else
                 {
-                    this.lstZmienne.add(0);
+                    this.lstZmienne.add(1);
                 }
             }
         }
