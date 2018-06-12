@@ -1,0 +1,9 @@
+Wyniki losowania:
+=======================
+Średnia teoretyczna:  
+Wariancja teoretyczna:  
+Średnia generowana:  
+Wariancja generowana: 
+Różnica średnich:  
+Wariancja teoretyczna:  
+Wynik: []

@@ -74,9 +74,6 @@ public class Dyskretne extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
         dlgZapis = new javax.swing.JDialog();
         jFileChooser1 = new javax.swing.JFileChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -322,17 +319,6 @@ public class Dyskretne extends javax.swing.JFrame {
                     .addComponent(jButton9))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jButton6.setText("Tak");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("Nie");
-
-        jLabel15.setText("Czy potwierdzasz wykonanie akcji?");
 
         dlgZapis.setMinimumSize(new java.awt.Dimension(582, 397));
         dlgZapis.setResizable(false);
@@ -738,19 +724,15 @@ public class Dyskretne extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         
-        jTextField2.setText(" ");
-        jTextField3.setText(" ");
-        jTextField4.setText(" ");
-        jTextField5.setText(" ");
-        jTextField6.setText(" ");
-        jTextField7.setText(" ");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
         lista.clear();
         
         dlgPotwierdzenieWyczyść.dispose();
@@ -940,8 +922,6 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JFileChooser jFileChooser1;
@@ -950,7 +930,6 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
