@@ -717,10 +717,19 @@ public class Dyskretne extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         
-        String strCopy = lista.toString();
+        String strCopy="";
+        for(int i=0;i<lista.getSize();i++)
+        {
+            strCopy+=(lista.elementAt(i)+System.lineSeparator());
+        }
         StringSelection stringSelection = new StringSelection(strCopy);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
+        
+//        String strCopy = lista.toString();
+//        StringSelection stringSelection = new StringSelection(strCopy);
+//        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+//        clipboard.setContents(stringSelection, null);
                 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -773,7 +782,11 @@ public class Dyskretne extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
         
-        String strCopy = lista.toString();
+        String strCopy="";
+        for(int i=0;i<lista.getSize();i++)
+        {
+            strCopy+=(lista.elementAt(i)+System.lineSeparator());
+        }
         StringSelection stringSelection = new StringSelection(strCopy);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
