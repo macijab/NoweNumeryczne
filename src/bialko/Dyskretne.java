@@ -76,6 +76,10 @@ public class Dyskretne extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         dlgZapis = new javax.swing.JDialog();
         jFileChooser1 = new javax.swing.JFileChooser();
+        dlgPotwierdzenieWyjście = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
@@ -342,6 +346,51 @@ public class Dyskretne extends javax.swing.JFrame {
         dlgZapisLayout.setVerticalGroup(
             dlgZapisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jFileChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        dlgPotwierdzenieWyjście.setMinimumSize(new java.awt.Dimension(138, 70));
+        dlgPotwierdzenieWyjście.setResizable(false);
+
+        jLabel15.setText("Czy potwierdzasz akcję?");
+
+        jButton12.setText("Tak");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Nie");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dlgPotwierdzenieWyjścieLayout = new javax.swing.GroupLayout(dlgPotwierdzenieWyjście.getContentPane());
+        dlgPotwierdzenieWyjście.getContentPane().setLayout(dlgPotwierdzenieWyjścieLayout);
+        dlgPotwierdzenieWyjścieLayout.setHorizontalGroup(
+            dlgPotwierdzenieWyjścieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgPotwierdzenieWyjścieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dlgPotwierdzenieWyjścieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addGroup(dlgPotwierdzenieWyjścieLayout.createSequentialGroup()
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        dlgPotwierdzenieWyjścieLayout.setVerticalGroup(
+            dlgPotwierdzenieWyjścieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgPotwierdzenieWyjścieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgPotwierdzenieWyjścieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton12)
+                    .addComponent(jButton13))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -630,7 +679,9 @@ public class Dyskretne extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        
+        dlgPotwierdzenieWyjście.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -886,6 +937,21 @@ public class Dyskretne extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        
+        dlgPotwierdzenieWyjście.dispose();
+        dispose();
+        
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        
+        dlgPotwierdzenieWyjście.dispose();
+        
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -924,6 +990,7 @@ public class Dyskretne extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog dlgPotwierdzenieWyczyść;
+    private javax.swing.JDialog dlgPotwierdzenieWyjście;
     private javax.swing.JDialog dlgRozkładHipergeometryczny;
     private javax.swing.JDialog dlgRozkładPoissona;
     private javax.swing.JDialog dlgRozkładZerojedynkowy;
@@ -931,6 +998,8 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -943,6 +1012,7 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
