@@ -29,7 +29,7 @@ public class Dwumianowy extends RozkładZeroJedynkowy {
     }
     public double getTeoreticalVariance()
     {
-        return intN*dbProbability*(1-dbProbability);
+        return Math.sqrt(intN*dbProbability*(1-dbProbability));
     }
     
     
@@ -60,7 +60,7 @@ public class Dwumianowy extends RozkładZeroJedynkowy {
             {
                 dbVariance += Math.pow((double)intZmienna, 2);
             }
-            return dbVariance/lstDwumianowy.size()- Math.pow(getGenerated1Mean(),2);
+            return Math.sqrt(dbVariance/lstDwumianowy.size()- Math.pow(getGenerated1Mean(),2));
         }
         public double getGenerated1Mean()
         {

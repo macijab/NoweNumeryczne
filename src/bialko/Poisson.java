@@ -43,7 +43,7 @@ public class Poisson {
         {
             dbVariance += Math.pow((double)intZmienna, 2);
         }
-        return dbVariance/lstWygenerowane.size()- Math.pow(getGeneratedMean(),2);
+        return Math.sqrt(dbVariance/lstWygenerowane.size()- Math.pow(getGeneratedMean(),2));
     }
     public int generowanieZmiennej() 
     {

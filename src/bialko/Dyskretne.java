@@ -1050,7 +1050,7 @@ public class Dyskretne extends javax.swing.JFrame {
             df.setMaximumFractionDigits(4);
             
             jTextField2.setText((String)df.format(rozkład2.getTeoreticalMean()));
-            jTextField3.setText((String)df.format(rozkład2.getTeoreticalMean()));
+            jTextField3.setText((String)df.format(Math.sqrt(rozkład2.getTeoreticalMean())));
             jTextField4.setText((String)df.format(rozkład2.getGeneratedMean()));
             jTextField5.setText((String)df.format(rozkład2.getGeneratedVariance()));
             jTextField6.setText((String)df.format(abs(rozkład2.getTeoreticalMean()-rozkład2.getGeneratedMean())));

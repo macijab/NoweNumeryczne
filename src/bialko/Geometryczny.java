@@ -52,7 +52,7 @@ public int intLZmiennych;
         return 1/p;
     }
     public double getTeoreticalVariance(){
-        return (1-p)/(p*p);
+        return Math.sqrt((1-p)/(p*p));
     }
         public double getGeneratedVariance()
     {
@@ -61,7 +61,7 @@ public int intLZmiennych;
         {
             dbVariance += Math.pow((double)intZmienna, 2);
         }
-        return dbVariance/lstWygenerowane.size()- Math.pow(getGeneratedMean(),2);
+        return Math.sqrt(dbVariance/lstWygenerowane.size()- Math.pow(getGeneratedMean(),2));
     }
     public int getListaWygenerowanych(int i)
     {

@@ -24,7 +24,7 @@ public class RozkładZeroJedynkowy {
         }
         public double getTeoreticVariance()
         {
-            return dbProbability*(1-dbProbability);
+            return Math.sqrt(dbProbability*(1-dbProbability));
         }
         public double getGeneratedVariance()
         {
@@ -33,7 +33,7 @@ public class RozkładZeroJedynkowy {
             {
                 dbVariance += Math.pow((double)intZmienna, 2);
             }
-            return dbVariance/lstZmienne.size()- Math.pow(getGeneratedMean(),2);
+            return Math.sqrt(dbVariance/lstZmienne.size()- Math.pow(getGeneratedMean(),2));
         }
         public double getGeneratedMean()
         {
