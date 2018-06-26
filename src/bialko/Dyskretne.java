@@ -5,12 +5,8 @@
  */
 package bialko;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import static java.lang.Math.abs;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import java.awt.datatransfer.*;
@@ -19,7 +15,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.DefaultEditorKit;
 
 /**
  *
@@ -33,7 +28,7 @@ public class Dyskretne extends javax.swing.JFrame {
     public Dyskretne() {
         initComponents();
     }
-    
+        
     boolean blObliczanie=false;
     boolean blWybór=false;
     public boolean czyPotwierdza()
@@ -69,7 +64,14 @@ public class Dyskretne extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jSpinner2 = new javax.swing.JSpinner();
-        dlgRozkładHipergeometryczny = new javax.swing.JDialog();
+        dlgRozkładGeometryczny = new javax.swing.JDialog();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jSpinner3 = new javax.swing.JSpinner();
         dlgPotwierdzenieWyczyść = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
@@ -80,6 +82,16 @@ public class Dyskretne extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        dlgRozkładDwumianowy = new javax.swing.JDialog();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jSpinner4 = new javax.swing.JSpinner();
+        jLabel24 = new javax.swing.JLabel();
+        jSpinner5 = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
@@ -109,6 +121,7 @@ public class Dyskretne extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -260,21 +273,86 @@ public class Dyskretne extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlgRozkładPoissonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton10)
-                    .addComponent(jButton11))
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout dlgRozkładHipergeometrycznyLayout = new javax.swing.GroupLayout(dlgRozkładHipergeometryczny.getContentPane());
-        dlgRozkładHipergeometryczny.getContentPane().setLayout(dlgRozkładHipergeometrycznyLayout);
-        dlgRozkładHipergeometrycznyLayout.setHorizontalGroup(
-            dlgRozkładHipergeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        dlgRozkładGeometryczny.setMinimumSize(new java.awt.Dimension(222, 245));
+        dlgRozkładGeometryczny.setResizable(false);
+
+        jButton6.setText("Oblicz");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Zakończ");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Rozkład Geometryczny");
+
+        jLabel19.setText("Prawdopodobieństwo:");
+
+        jLabel20.setText("Liczba wartości:");
+
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        javax.swing.GroupLayout dlgRozkładGeometrycznyLayout = new javax.swing.GroupLayout(dlgRozkładGeometryczny.getContentPane());
+        dlgRozkładGeometryczny.getContentPane().setLayout(dlgRozkładGeometrycznyLayout);
+        dlgRozkładGeometrycznyLayout.setHorizontalGroup(
+            dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgRozkładGeometrycznyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dlgRozkładGeometrycznyLayout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField9))
+                    .addGroup(dlgRozkładGeometrycznyLayout.createSequentialGroup()
+                        .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSpinner3))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgRozkładGeometrycznyLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(51, 51, 51))
         );
-        dlgRozkładHipergeometrycznyLayout.setVerticalGroup(
-            dlgRozkładHipergeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        dlgRozkładGeometrycznyLayout.setVerticalGroup(
+            dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgRozkładGeometrycznyLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(dlgRozkładGeometrycznyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         dlgPotwierdzenieWyczyść.setMinimumSize(new java.awt.Dimension(138, 70));
@@ -391,6 +469,91 @@ public class Dyskretne extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        dlgRozkładDwumianowy.setMinimumSize(new java.awt.Dimension(216, 216));
+
+        jButton14.setText("Oblicz");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("Zakończ");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Rozkład Dwumianowy");
+
+        jLabel22.setText("Prawdopodobieństwo:");
+
+        jLabel23.setText("Liczba wartości:");
+
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+
+        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel24.setText("Ilość prób:");
+
+        jSpinner5.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        javax.swing.GroupLayout dlgRozkładDwumianowyLayout = new javax.swing.GroupLayout(dlgRozkładDwumianowy.getContentPane());
+        dlgRozkładDwumianowy.getContentPane().setLayout(dlgRozkładDwumianowyLayout);
+        dlgRozkładDwumianowyLayout.setHorizontalGroup(
+            dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgRozkładDwumianowyLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel21)
+                .addGap(51, 51, 51))
+            .addGroup(dlgRozkładDwumianowyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dlgRozkładDwumianowyLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField10))
+                    .addGroup(dlgRozkładDwumianowyLayout.createSequentialGroup()
+                        .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24))
+                        .addGap(49, 49, 49)
+                        .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSpinner4)
+                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSpinner5))))
+                .addContainerGap())
+        );
+        dlgRozkładDwumianowyLayout.setVerticalGroup(
+            dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgRozkładDwumianowyLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(11, 11, 11)
+                .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgRozkładDwumianowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton14)
+                    .addComponent(jButton15))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jScrollPane1.setViewportView(jList1);
@@ -495,7 +658,16 @@ public class Dyskretne extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem3);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, 0));
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, 0));
+        jMenuItem6.setText("Rozkład Dwumianowy");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem6);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, 0));
         jMenuItem4.setText("Rozkład Poissona");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -504,7 +676,7 @@ public class Dyskretne extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem4);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, 0));
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, 0));
         jMenuItem5.setText("Rozkład Geometryczny");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -545,52 +717,56 @@ public class Dyskretne extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator2)
+                    .addComponent(jSeparator1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
                         .addComponent(jButton5))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel11)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel14))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField5)
-                                .addComponent(jTextField6)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jSeparator1)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel13))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel14))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField4))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addComponent(jLabel6)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7)
-                        .addComponent(jLabel6))
+                        .addComponent(jLabel7))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -604,8 +780,8 @@ public class Dyskretne extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12))
-                        .addGap(7, 7, 7)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -613,16 +789,18 @@ public class Dyskretne extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                            .addComponent(jLabel13))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton5)
-                                .addComponent(jButton3)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton5)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4))
                         .addGap(8, 8, 8))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -895,8 +1073,9 @@ public class Dyskretne extends javax.swing.JFrame {
             }
             
         }
-
         
+        dlgRozkładGeometryczny.dispose();
+
         
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -940,7 +1119,144 @@ public class Dyskretne extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        
+        dlgRozkładGeometryczny.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+      
+        lista.clear();
+        
+        if (!jTextField9.getText().isEmpty() && (int)jSpinner3.getValue()>0 && Double.parseDouble(jTextField9.getText()) >= 0 && Double.parseDouble(jTextField9.getText()) <= 1 )
+        {
+            Geometryczny rozkład3 = new Geometryczny((int)jSpinner3.getValue(), Double.parseDouble(jTextField9.getText()));
+            blObliczanie=true;
+            rozkład3.generowanieZmiennej();   
+                        
+            jList1.setModel(lista);
+            
+            for (int i=0;(i-1) < ((int)jSpinner3.getValue())-1;i++)
+            {
+                lista.addElement(rozkład3.getListaWygenerowanych(i));
+            }
+            
+            DecimalFormat df = new DecimalFormat();
+            df.setMinimumFractionDigits(4);
+            df.setMaximumFractionDigits(4);
+            
+            jTextField2.setText((String)df.format(rozkład3.getTeoreticalMean()));
+            jTextField3.setText((String)df.format(rozkład3.getTeoreticalVariance()));
+            jTextField4.setText((String)df.format(rozkład3.getGeneratedMean()));
+            jTextField5.setText((String)df.format(rozkład3.getGeneratedVariance()));
+            jTextField6.setText((String)df.format(abs(rozkład3.getTeoreticalMean()-rozkład3.getGeneratedMean())));
+            jTextField7.setText((String)df.format(abs(rozkład3.getTeoreticalVariance()-rozkład3.getGeneratedVariance())));
+
+            dlgRozkładPoissona.dispose();
+        
+        }
+        else
+        {
+            if (jTextField9.getText().isEmpty() || Double.parseDouble(jTextField9.getText()) < 0 || Double.parseDouble(jTextField9.getText()) > 1 )
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano poprawnego prawdopodobieństwa!");
+                return;
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano liczby zmiennych!");
+                return;
+            }
+            
+        }
+        
+        dlgRozkładGeometryczny.dispose();   
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+        dlgRozkładGeometryczny.dispose();
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        
+        dlgRozkładDwumianowy.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        
+                lista.clear();
+        
+        if (!jTextField10.getText().isEmpty() && (int)jSpinner5.getValue()>0 && Double.parseDouble(jTextField10.getText()) >= 0 && Double.parseDouble(jTextField10.getText()) <= 1)
+        {
+            Dwumianowy rozkład4 = new Dwumianowy(Double.parseDouble(jTextField10.getText()), (int)jSpinner4.getValue());
+            blObliczanie=true;
+            rozkład4.setIntN((int)jSpinner5.getValue());
+                rozkład4.generowanieRozkładu();            
+                        
+            jList1.setModel(lista);
+            
+            for (int i=0; (i-1) < ((int)jSpinner5.getValue()-1);i++)
+            {
+
+                lista.addElement(rozkład4.getRozkładDwumianowy(i));
+            }
+            
+            DecimalFormat df = new DecimalFormat();
+            df.setMinimumFractionDigits(4);
+            df.setMaximumFractionDigits(4);
+            
+            jTextField2.setText((String)df.format(rozkład4.getTeoreticalMean()));
+            jTextField3.setText((String)df.format(rozkład4.getTeoreticalVariance()));
+            jTextField4.setText((String)df.format(rozkład4.getGenerated1Mean()));
+            jTextField5.setText((String)df.format(rozkład4.getGenerated1Variance()));
+            jTextField6.setText((String)df.format(abs(rozkład4.getTeoreticalMean()-rozkład4.getGenerated1Mean())));
+            jTextField7.setText((String)df.format(abs(rozkład4.getTeoreticalVariance()-rozkład4.getGenerated1Variance())));
+
+            dlgRozkładDwumianowy.dispose();
+        
+        }
+        else
+        {
+            if (jTextField10.getText().isEmpty() || Double.parseDouble(jTextField10.getText()) > 1 || Double.parseDouble(jTextField10.getText()) < 0)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano poprawnego prawdopodobieństwa!");
+                return;
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "Nie podano liczby zmiennych!");
+                return;
+            }
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        
+        blObliczanie=false;
+        dlgRozkładDwumianowy.dispose();
+        
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -981,7 +1297,8 @@ public class Dyskretne extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog dlgPotwierdzenieWyczyść;
     private javax.swing.JDialog dlgPotwierdzenieWyjście;
-    private javax.swing.JDialog dlgRozkładHipergeometryczny;
+    private javax.swing.JDialog dlgRozkładDwumianowy;
+    private javax.swing.JDialog dlgRozkładGeometryczny;
     private javax.swing.JDialog dlgRozkładPoissona;
     private javax.swing.JDialog dlgRozkładZerojedynkowy;
     private javax.swing.JDialog dlgZapis;
@@ -990,10 +1307,14 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JFileChooser jFileChooser1;
@@ -1005,6 +1326,13 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1024,6 +1352,7 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1032,7 +1361,11 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JSpinner jSpinner4;
+    private javax.swing.JSpinner jSpinner5;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -1040,6 +1373,7 @@ public class Dyskretne extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

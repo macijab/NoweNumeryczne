@@ -15,8 +15,9 @@ import java.util.ArrayList;
  * @author faust
  */
 public class RozkładZeroJedynkowy {
-        private final double dbProbability;
+        protected final double dbProbability;
         private final int intLiczbaWartosci;
+        List<Dystrybuanta> lstWygenerowanaDystrybuanta = new ArrayList<Dystrybuanta>();
         public double getTeoreticMean()
         {
            return dbProbability;
@@ -50,7 +51,7 @@ public class RozkładZeroJedynkowy {
         public int getListaZmiennych(int i){
             return lstZmienne.get(i);
         }
-        private final List<Integer> lstZmienne = new ArrayList<>();
+        protected List<Integer> lstZmienne = new ArrayList<>();
         public void Zm_Generowana()
         {
             Random rdR1 = new Random();
@@ -66,4 +67,50 @@ public class RozkładZeroJedynkowy {
                 }
             }
         }
+        
+        public void setDystrybuanta(){
+        Dystrybuanta d1 = new Dystrybuanta();
+        int licznik = 0;
+        
+        
+        for(int intZmienna : this.lstZmienne)
+        {
+            if(lstWygenerowanaDystrybuanta.size() == 0){
+                licznik++;
+                d1.setJakaLicznik(intZmienna,licznik);
+            }
+            else{
+                for(Dystrybuanta d2 : this.lstWygenerowanaDystrybuanta)
+                    if(d2.getJaka() == intZmienna){
+                        licznik++;
+                        d1.setLiczni(licznik);
+                    }
+                    else{
+                        licznik = 1;
+                        d1.setJakaLicznik(intZmienna, licznik);
+                }
+            }
+        double dystryb=0;
+        for(Dystrybuanta d3 : this.lstWygenerowanaDystrybuanta){
+            dystryb = (double)d3.getlicznik()/lstZmienne.size();
+            d3.setPr(dystryb);
+        }
+            
+            
+        }
+    }
+    public void setDystrybuantaTeor(){
+        this.lstWygenerowanaDystrybuanta.get(0).teorPr = 0;
+        this.lstWygenerowanaDystrybuanta.get(1).teorPr = dbProbability;
+    
+    }
+    public int getJakaZmienna(int l){
+        return lstWygenerowanaDystrybuanta.get(l).getJaka();
+    }
+    public double getTeoretycznaDystrybuanta(int i){
+        return lstWygenerowanaDystrybuanta.get(i).teorPr;
+    }
+    public double  getGenerowanaDystrybuanta(int i){
+        return lstWygenerowanaDystrybuanta.get(i).dbPr;
+    }
 }
